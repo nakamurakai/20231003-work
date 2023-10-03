@@ -1,8 +1,17 @@
 from math import ceil
 
 def calc_account(m):
-    # 実装は入れていません、自分で入れてください
-    pass
+    if m <= 0:
+        return None
+
+    money = 0
+
+    if m <= 1700:
+        money = 610
+    else:
+        money = ceil((m - 1700) / 315) * 80 + 610
+
+    return money
 
 if __name__ == "__main__":
     from argparse import ArgumentParser
